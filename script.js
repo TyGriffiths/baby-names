@@ -7,13 +7,11 @@ function nameButton () {
 	var boy1 = boyNames[Math.floor(Math.random()*boyNames.length)];
 	var boy2 = boyNames[Math.floor(Math.random()*boyNames.length)];
 	document.getElementById("generate-name").innerHTML = boy1 + " " + boy2 + " " + lastName;
-	document.body.style.backgroundColor = "#89cff0";
 	}
 	else if (document.getElementById("female").checked) {
 	var girl1 = girlNames[Math.floor(Math.random()*girlNames.length)];
 	var girl2 = girlNames[Math.floor(Math.random()*girlNames.length)];
 	document.getElementById("generate-name").innerHTML = girl1 + " " + girl2 + " " + lastName;
-	document.body.style.backgroundColor = "#ffb6c1";
 	}
 	else if (lastName == "") {
 		alert("Please input a last name. Or else.");
@@ -21,4 +19,13 @@ function nameButton () {
 	else {
 		alert("Please select either Male or Female.");
 	}
+}
+
+document.getElementById("male").addEventListener("click", boyColor);
+function boyColor() {
+	document.body.style.backgroundColor = "#89cff0";
+}
+document.getElementById("female").addEventListener("click", girlColor);
+function girlColor() {
+	document.body.style.backgroundColor = "#ffb6c1";
 }
